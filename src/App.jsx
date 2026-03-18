@@ -1258,9 +1258,9 @@ function StepNorms({ disciplines, setDisciplines, project, onToggle, onGoCheckli
           ) : (
             <>
               <div style={{display:"flex",gap:6,marginBottom:12}}>
-                <button onClick={()=>sections.forEach(s=>onToggle(dk,s.title,true))}
+                <button onClick={()=>sections.forEach(s=>onToggle(dk,s.title,true,true))}
                   style={{background:`${d.color}22`,border:`1px solid ${d.color}44`,borderRadius:7,color:d.color,fontSize:11,fontWeight:700,padding:"5px 12px",cursor:"pointer"}}>✓ Tutte</button>
-                <button onClick={()=>sections.forEach(s=>onToggle(dk,s.title,false))}
+                <button onClick={()=>sections.forEach(s=>onToggle(dk,s.title,false,true))}
                   style={{background:"#162230",border:BD,borderRadius:7,color:"#7a9ab0",fontSize:11,padding:"5px 12px",cursor:"pointer"}}>✕ Nessuna</button>
               </div>
 
@@ -1297,9 +1297,9 @@ function StepNorms({ disciplines, setDisciplines, project, onToggle, onGoCheckli
                             <div style={{fontSize:10,color:"#3a5468",marginTop:1}}>{groupTotalCnt} sezioni · {groupActiveCnt} attive</div>
                           </div>
                           <div style={{display:"flex",gap:4}}>
-                            <button onClick={e=>{e.stopPropagation();sections.filter(s=>s.group===grp).forEach(s=>onToggle(dk,s.title,true));}}
+                            <button onClick={e=>{e.stopPropagation();sections.filter(s=>s.group===grp).forEach(s=>onToggle(dk,s.title,true,true));}}
                               style={{background:"#7EB8C422",border:"1px solid #7EB8C444",borderRadius:6,color:"#7EB8C4",fontSize:10,fontWeight:700,padding:"2px 8px",cursor:"pointer"}}>✓ Tutte</button>
-                            <button onClick={e=>{e.stopPropagation();sections.filter(s=>s.group===grp).forEach(s=>onToggle(dk,s.title,false));}}
+                            <button onClick={e=>{e.stopPropagation();sections.filter(s=>s.group===grp).forEach(s=>onToggle(dk,s.title,false,true));}}
                               style={{background:"#162230",border:BD,borderRadius:6,color:"#7a9ab0",fontSize:10,padding:"2px 8px",cursor:"pointer"}}>✕</button>
                           </div>
                         </div>
@@ -1975,13 +1975,13 @@ export default function App() {
     if (activeId === id) { setActiveId(null); setActiveStep("project"); }
   };
 
-  const toggleSection = useCallback((dKey, secTitle, force) => {
+  const toggleSection = useCallback((dKey, secTitle, force, noNav) => {
     const key = `${dKey}__${secTitle}`;
     setProjects(prev => prev.map(p => {
       if (p.id !== activeId) return p;
       const newVal = force !== undefined ? !!force : !p.activeSections?.[key];
-      // Se si sta attivando una sezione, naviga alla checklist
-      if (newVal) setActiveStep("checklist");
+      // Se si sta attivando una sezione, naviga alla checklist (salvo bulk)
+      if (newVal && !noNav) setActiveStep("checklist");
       return { ...p, updatedAt: new Date().toISOString(), activeSections: { ...p.activeSections, [key]: newVal } };
     }));
   }, [activeId]);
