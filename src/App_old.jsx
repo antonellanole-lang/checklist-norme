@@ -17,24 +17,24 @@ const DEFAULT_DISCIPLINES = {
   architettura: {
     label: "Architettura", icon: "🏛️", color: "#C8A96E",
     sections: [
-      { title: "Art. 1 – Campo di Applicazione – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 1 – Campo di Applicazione – D.M. 236/1989", items: [
         { text: "1.1 – L'edificio è di nuova costruzione privata (residenziale o non residenziale)?", ref: "D.M. 236/1989, Art. 1" },
         { text: "1.2 – L'edificio rientra nell'edilizia residenziale pubblica sovvenzionata/agevolata di nuova costruzione?", ref: "D.M. 236/1989, Art. 1" },
         { text: "1.3 – L'intervento riguarda la ristrutturazione di edifici privati (anche preesistenti)?", ref: "D.M. 236/1989, Art. 1" },
         { text: "1.4 – Sono compresi gli spazi esterni di pertinenza dell'edificio?", ref: "D.M. 236/1989, Art. 1" },
       ]},
-      { title: "Art. 3.2 – Accessibilità Obbligatoria – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 3.2 – Accessibilità Obbligatoria – D.M. 236/1989", items: [
         { text: "3.1 – Esiste almeno un percorso esterno fruibile da persone con ridotte/impedite capacità motorie o sensoriali?", ref: "D.M. 236/1989, Art. 3.2a" },
         { text: "3.2 – Le parti comuni dell'edificio sono accessibili?", ref: "D.M. 236/1989, Art. 3.2b" },
         { text: "3.3 – Negli edifici residenziali con NON più di 3 livelli fuori terra: è prevista la possibilità di installare servoscala in futuro?", ref: "D.M. 236/1989, Art. 3.2" },
         { text: "3.4 – L'ascensore è installato se l'accesso alla più alta unità immobiliare supera il 3° livello (compresi interrati/porticati)?", ref: "D.M. 236/1989, Art. 3.2" },
       ]},
-      { title: "Art. 3.3 – Accessibilità Categorie Specifiche – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 3.3 – Accessibilità Categorie Specifiche – D.M. 236/1989", items: [
         { text: "3.5 – Almeno il 5% degli alloggi (min. 1) è accessibile nell'edilizia residenziale sovvenzionata?", ref: "D.M. 236/1989, Art. 3.3a" },
         { text: "3.6 – Gli ambienti destinati ad attività scolastiche, sanitarie, assistenziali, culturali, sportive sono accessibili?", ref: "D.M. 236/1989, Art. 3.3b" },
         { text: "3.7 – Gli edifici sedi di aziende soggette al collocamento obbligatorio rispettano le norme di accessibilità?", ref: "D.M. 236/1989, Art. 3.3c" },
       ]},
-      { title: "Art. 3.4 – Visitabilità – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 3.4 – Visitabilità – D.M. 236/1989", items: [
         { text: "3.8 – Negli edifici residenziali: soggiorno/pranzo, un servizio igienico e i percorsi interni sono accessibili?", ref: "D.M. 236/1989, Art. 3.4a" },
         { text: "3.9 – Nelle unità sedi di riunioni/spettacoli: almeno una zona pubblica e un servizio igienico sono accessibili?", ref: "D.M. 236/1989, Art. 3.4b" },
         { text: "3.10 – Nelle strutture ricettive: tutte le parti comuni e il numero prescritto di stanze sono accessibili?", ref: "D.M. 236/1989, Art. 3.4c" },
@@ -43,7 +43,7 @@ const DEFAULT_DISCIPLINES = {
         { text: "3.13 – Nei luoghi di lavoro non aperti al pubblico e non soggetti al collocamento obbligatorio: è soddisfatto il requisito di adattabilità?", ref: "D.M. 236/1989, Art. 3.4f" },
         { text: "3.14 – Negli edifici residenziali unifamiliari o plurifamiliari privi di parti comuni: è soddisfatto il requisito di adattabilità?", ref: "D.M. 236/1989, Art. 3.4g" },
       ]},
-      { title: "Art. 4.1.1 – Porte – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.1.1 – Porte – D.M. 236/1989", items: [
         { text: "4.1 – La luce netta della porta d'accesso all'edificio e alle singole unità immobiliari è ≥ 80 cm?", ref: "D.M. 236/1989, Art. 4.1.1" },
         { text: "4.2 – La luce netta delle altre porte interne è ≥ 75 cm?", ref: "D.M. 236/1989, Art. 4.1.1" },
         { text: "4.3 – Gli spazi antistanti e retrostanti la porta consentono le manovre con sedia a ruote?", ref: "D.M. 236/1989, Art. 4.1.1" },
@@ -55,19 +55,19 @@ const DEFAULT_DISCIPLINES = {
         { text: "4.9 – Le porte vetrate sono dotate di segnali visibili (ad es. bande colorate)?", ref: "D.M. 236/1989, Art. 4.1.1" },
         { text: "4.10 – Sono preferite maniglie a leva opportunamente curvate e arrotondate?", ref: "D.M. 236/1989, Art. 4.1.1" },
       ]},
-      { title: "Art. 4.1.2 – Pavimenti – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.1.2 – Pavimenti – D.M. 236/1989", items: [
         { text: "4.11 – I pavimenti sono orizzontali e complanari tra loro?", ref: "D.M. 236/1989, Art. 4.1.2" },
         { text: "4.12 – Le variazioni di livello sono risolte con rampe o raccordi (max 2,5 cm con bordi arrotondati)?", ref: "D.M. 236/1989, Art. 4.1.2" },
         { text: "4.13 – Il materiale del pavimento è antisdrucciolo (resistenza allo scivolamento verificata)?", ref: "D.M. 236/1989, Art. 4.1.2" },
         { text: "4.14 – I giunti di dilatazione non superano i 5 mm?", ref: "D.M. 236/1989, Art. 4.1.2" },
         { text: "4.15 – Le griglie o le caditoie hanno maglie ≤ 2 cm?", ref: "D.M. 236/1989, Art. 4.1.2" },
       ]},
-      { title: "Art. 4.1.3 – Percorsi Orizzontali – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.1.3 – Percorsi Orizzontali – D.M. 236/1989", items: [
         { text: "4.16 – I corridoi e i percorsi interni hanno larghezza ≥ 100 cm?", ref: "D.M. 236/1989, Art. 4.1.3" },
         { text: "4.17 – È previsto un allargamento a 150 cm ogni 10 m per consentire l'inversione di marcia?", ref: "D.M. 236/1989, Art. 4.1.3" },
         { text: "4.18 – I percorsi sono privi di ostacoli e sporgenze che riducano la larghezza utile?", ref: "D.M. 236/1989, Art. 4.1.3" },
       ]},
-      { title: "Art. 4.1.4 – Scale – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.1.4 – Scale – D.M. 236/1989", items: [
         { text: "4.19 – Le scale comuni hanno larghezza ≥ 120 cm?", ref: "D.M. 236/1989, Art. 4.1.4" },
         { text: "4.20 – La pedata è ≥ 30 cm e l'alzata ≤ 16 cm?", ref: "D.M. 236/1989, Art. 4.1.4" },
         { text: "4.21 – Ogni rampa ha non più di 12 gradini consecutivi?", ref: "D.M. 236/1989, Art. 4.1.4" },
@@ -77,14 +77,14 @@ const DEFAULT_DISCIPLINES = {
         { text: "4.25 – Il corrimano è distante dalla parete ≥ 4 cm e prolungato oltre il primo e l'ultimo gradino?", ref: "D.M. 236/1989, Art. 4.1.4" },
         { text: "4.26 – I gradini hanno profilo continuo, privi di sporgenze a naso?", ref: "D.M. 236/1989, Art. 4.1.4" },
       ]},
-      { title: "Art. 4.1.5 – Rampe – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.1.5 – Rampe – D.M. 236/1989", items: [
         { text: "4.27 – La pendenza longitudinale delle rampe è ≤ 8% (deroghe in adeguamento con grafico specifico)?", ref: "D.M. 236/1989, Art. 4.1.5" },
         { text: "4.28 – La larghezza della rampa è ≥ 90 cm (≥ 150 cm per incrocio)?", ref: "D.M. 236/1989, Art. 4.1.5" },
         { text: "4.29 – È presente un ripiano orizzontale ogni 10 m di sviluppo (min. 150×150 cm)?", ref: "D.M. 236/1989, Art. 4.1.5" },
         { text: "4.30 – I bordi liberi delle rampe sono protetti con cordolo ≥ 10 cm o parapetto?", ref: "D.M. 236/1989, Art. 4.1.5" },
         { text: "4.31 – È presente il corrimano su entrambi i lati della rampa?", ref: "D.M. 236/1989, Art. 4.1.5" },
       ]},
-      { title: "Art. 4.1.6 – Ascensori – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.1.6 – Ascensori – D.M. 236/1989", items: [
         { text: "4.32 – La cabina ascensore (nuova costruzione non residenziale) è ≥ 140×110 cm?", ref: "D.M. 236/1989, Art. 4.1.6" },
         { text: "4.33 – La cabina ascensore (nuova costruzione residenziale) è ≥ 130×95 cm?", ref: "D.M. 236/1989, Art. 4.1.6" },
         { text: "4.34 – La piattaforma di manovra anteriore all'ascensore è ≥ 150×150 cm?", ref: "D.M. 236/1989, Art. 4.1.6" },
@@ -94,7 +94,7 @@ const DEFAULT_DISCIPLINES = {
         { text: "4.38 – È presente specchio nella parete di fondo per consentire la manovra in retromarcia?", ref: "D.M. 236/1989, Art. 4.1.6" },
         { text: "4.39 – Il tempo di apertura delle porte è ≥ 8 secondi?", ref: "D.M. 236/1989, Art. 4.1.6" },
       ]},
-      { title: "Art. 4.1.7 – Servizi Igienici – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.1.7 – Servizi Igienici – D.M. 236/1989", items: [
         { text: "4.40 – Il locale bagno accessibile consente la rotazione di 360° (cerchio Ø 150 cm)?", ref: "D.M. 236/1989, Art. 4.1.7" },
         { text: "4.41 – L'asse del WC è a min. 40 cm dalla parete laterale?", ref: "D.M. 236/1989, Art. 4.1.7" },
         { text: "4.42 – Il bordo anteriore del WC è a 45–50 cm dalla parete frontale?", ref: "D.M. 236/1989, Art. 4.1.7" },
@@ -104,28 +104,28 @@ const DEFAULT_DISCIPLINES = {
         { text: "4.46 – Il box doccia, se presente, ha dimensioni ≥ 80×120 cm con sedile ribaltabile?", ref: "D.M. 236/1989, Art. 4.1.7" },
         { text: "4.47 – Gli accessori e i comandi del bagno sono posizionati tra 40 e 140 cm di altezza?", ref: "D.M. 236/1989, Art. 4.1.7" },
       ]},
-      { title: "Art. 4.2 – Percorsi Esterni – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.2 – Percorsi Esterni – D.M. 236/1989", items: [
         { text: "4.48 – Il percorso esterno ha larghezza ≥ 90 cm?", ref: "D.M. 236/1989, Art. 4.2" },
         { text: "4.49 – La pendenza longitudinale del percorso esterno è ≤ 5%?", ref: "D.M. 236/1989, Art. 4.2" },
         { text: "4.50 – La pendenza trasversale del percorso esterno è ≤ 1%?", ref: "D.M. 236/1989, Art. 4.2" },
         { text: "4.51 – Il pavimento esterno è antisdrucciolo anche in condizioni di bagnato?", ref: "D.M. 236/1989, Art. 4.2" },
         { text: "4.52 – Sono presenti protezioni laterali (cordoli o parapetti) sui bordi liberi?", ref: "D.M. 236/1989, Art. 4.2" },
       ]},
-      { title: "Art. 4.3 – Parcheggi – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.3 – Parcheggi – D.M. 236/1989", items: [
         { text: "4.53 – I posti riservati ai disabili sono ≥ 1 ogni 50 posti totali (min. 1)?", ref: "D.M. 236/1989, Art. 4.3" },
         { text: "4.54 – La larghezza del posto riservato è ≥ 320 cm?", ref: "D.M. 236/1989, Art. 4.3" },
         { text: "4.55 – Il posto è posizionato in prossimità dell'ingresso accessibile e possibilmente coperto?", ref: "D.M. 236/1989, Art. 4.3" },
         { text: "4.56 – È presente il simbolo internazionale di accessibilità sul posto riservato?", ref: "D.M. 236/1989, Art. 4.3" },
       ]},
-      { title: "Art. 4.4 – Terminali degli Impianti – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.4 – Terminali degli Impianti – D.M. 236/1989", items: [
         { text: "4.57 – I terminali degli impianti (interruttori, campanelli, citofoni, ecc.) sono tra 40 e 140 cm di altezza?", ref: "D.M. 236/1989, Art. 4.4" },
         { text: "4.58 – Le cassette postali residenziali sono a un'altezza ≤ 140 cm?", ref: "D.M. 236/1989, Art. 4.4" },
       ]},
-      { title: "Art. 4.5 – Arredi Fissi – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 4.5 – Arredi Fissi – D.M. 236/1989", items: [
         { text: "4.59 – I parapetti hanno altezza ≥ 100 cm e sono inattraversabili da una sfera di Ø 10 cm?", ref: "D.M. 236/1989, Art. 4.5" },
         { text: "4.60 – Sono evitati spigoli vivi e superfici abrasive negli arredi fissi?", ref: "D.M. 236/1989, Art. 4.5" },
       ]},
-      { title: "Art. 5 – Prescrizioni Tecniche per Edifici di E.R.P. – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 5 – Prescrizioni Tecniche per Edifici di E.R.P. – D.M. 236/1989", items: [
         { text: "5.1 – Negli alloggi accessibili di ERP: lo spazio di rotazione Ø 150 cm è garantito in soggiorno, cucina, camera e bagno?", ref: "D.M. 236/1989, Art. 5.1" },
         { text: "5.2 – Negli alloggi accessibili di ERP: le porte hanno luce netta ≥ 80 cm?", ref: "D.M. 236/1989, Art. 5.1" },
         { text: "5.3 – Negli alloggi accessibili di ERP: corridoi e disimpegni hanno larghezza ≥ 100 cm?", ref: "D.M. 236/1989, Art. 5.1" },
@@ -136,20 +136,20 @@ const DEFAULT_DISCIPLINES = {
         { text: "5.8 – Edifici aperti al pubblico (sup. > 250 mq): almeno un servizio igienico accessibile?", ref: "D.M. 236/1989, Art. 5.5" },
         { text: "5.9 – Edifici pubblici esistenti non ristrutturati: pulsante di chiamata con simbolo accessibilità all'ingresso?", ref: "D.M. 236/1989, Art. 5.7" },
       ]},
-      { title: "Art. 6 – Criteri di Progettazione per l'Adattabilità – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 6 – Criteri di Progettazione per l'Adattabilità – D.M. 236/1989", items: [
         { text: "6.1 – L'edificio di nuova costruzione è progettato per consentire modifiche future di accessibilità a costi contenuti?", ref: "D.M. 236/1989, Art. 6" },
         { text: "6.2 – Il posizionamento e dimensionamento di servizi, disimpegni e porte è tale da consentire future trasformazioni?", ref: "D.M. 236/1989, Art. 6" },
         { text: "6.3 – Nelle unità immobiliari a più livelli: se non è possibile un servoscala, è previsto spazio per futura piattaforma elevatrice?", ref: "D.M. 236/1989, Art. 6" },
         { text: "6.4 – Negli interventi di ristrutturazione: i requisiti di adattabilità corrispondono a quelli della nuova edificazione (compatibilmente con i vincoli strutturali)?", ref: "D.M. 236/1989, Art. 6" },
         { text: "6.5 – L'eventuale installazione dell'ascensore nel vano scala non compromette la fruibilità delle rampe per l'evacuazione?", ref: "D.M. 236/1989, Art. 6" },
       ]},
-      { title: "Art. 7 – Cogenza delle Prescrizioni – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 7 – Cogenza delle Prescrizioni – D.M. 236/1989", items: [
         { text: "7.1 – Le specificazioni dell'Art. 8 sono rispettate, o sono state proposte soluzioni alternative documentate con relazione tecnica?", ref: "D.M. 236/1989, Art. 7" },
         { text: "7.2 – In caso di soluzioni alternative, il professionista abilitato ha certificato la conformità o equivalenza ai criteri di progettazione?", ref: "D.M. 236/1989, Art. 7" },
         { text: "7.3 – L'ufficio tecnico del Comune ha verificato la conformità del progetto prima del rilascio del titolo abilitativo?", ref: "D.M. 236/1989, Art. 7" },
         { text: "7.4 – Le eventuali deroghe (locali tecnici, ristrutturazioni con vincoli strutturali) sono state motivate e autorizzate dal Sindaco?", ref: "D.M. 236/1989, Art. 7" },
       ]},
-      { title: "Art. 8 – Specifiche Dimensionali (Riepilogo) – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Art. 8 – Specifiche Dimensionali (Riepilogo) – D.M. 236/1989", items: [
         { text: "8.1 – Spazio di rotazione 360° (sedia a ruote): cerchio Ø 150 cm disponibile nei punti necessari?", ref: "D.M. 236/1989, Art. 8" },
         { text: "8.2 – Spazio di rotazione 180° (inversione): area min. 140×170 cm disponibile?", ref: "D.M. 236/1989, Art. 8" },
         { text: "8.3 – Porta accesso edificio/unità immobiliare: luce netta ≥ 80 cm?", ref: "D.M. 236/1989, Art. 8" },
@@ -171,7 +171,7 @@ const DEFAULT_DISCIPLINES = {
         { text: "8.19 – Cassette postali residenziali: altezza ≤ 140 cm?", ref: "D.M. 236/1989, Art. 8" },
         { text: "8.20 – Parapetti: altezza ≥ 100 cm, inattraversabili da sfera Ø 10 cm?", ref: "D.M. 236/1989, Art. 8" },
       ]},
-      { title: "Artt. 10–11 – Elaborati Tecnici e Verifiche – D.M. 236/1989", group: "DM236_1989-Barriera architettonica", items: [
+      { title: "Artt. 10–11 – Elaborati Tecnici e Verifiche – D.M. 236/1989", items: [
         { text: "10.1 – Gli elaborati tecnici evidenziano chiaramente le soluzioni per accessibilità, visitabilità e adattabilità?", ref: "D.M. 236/1989, Art. 10" },
         { text: "10.2 – È presente una relazione specifica con descrizione degli interventi di eliminazione barriere architettoniche?", ref: "D.M. 236/1989, Art. 10" },
         { text: "10.3 – Per l'adattabilità sono stati predisposti specifici elaborati grafici?", ref: "D.M. 236/1989, Art. 10" },
